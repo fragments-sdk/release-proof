@@ -1,0 +1,15 @@
+:root {
+  --fui-color-accent: #0a5cff;
+  --fui-color-accent-contrast: #ffffff;
+  --fui-color-surface: #ffffff;
+  --fui-color-text: #111318;
+  --fui-color-border: #d5d8de;
+  --fui-radius-sm: 4px;
+  --fui-radius-md: 8px;
+  --fui-space-1: 4px;
+  --fui-space-2: 8px;
+  --fui-space-3: 12px;
+  --fui-space-4: 16px;
+  --fui-font-size-sm: 14px;
+  --fui-font-size-md: 16px;
+}
