@@ -1,0 +1,7 @@
+cache/
+diff/
+analysis-cache.json
+readiness-fragments.json
+checkpoints.json
+mcp.env
+activation.json

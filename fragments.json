@@ -1,0 +1,108 @@
+{
+  "version": "1.0.0",
+  "generatedAt": "2026-09-05T09:37:47.043Z",
+  "generatorVersion": "sha256:deea39c65b3a3a6dc24f36bcd4934c99c5a805d61ac68f207cc41c1029339282",
+  "buildInputs": [
+    "fragments.config.ts",
+    "src/components/Button.tsx"
+  ],
+  "fragments": {
+    "Button": {
+      "filePath": "src/components/Button.tsx",
+      "meta": {
+        "name": "Button",
+        "description": "Container button for composing UI",
+        "category": "Actions",
+        "status": "stable"
+      },
+      "usage": {
+        "when": [
+          "Use Button for its intended purpose"
+        ],
+        "whenNot": []
+      },
+      "props": {
+        "variant": {
+          "type": "enum",
+          "description": "",
+          "required": false,
+          "values": [
+            "primary",
+            "secondary"
+          ]
+        },
+        "children": {
+          "type": "node",
+          "description": "",
+          "required": true
+        }
+      },
+      "variants": [
+        {
+          "name": "variant=\"primary\"",
+          "description": "Extracted enum prop value variant=\"primary\".",
+          "args": {
+            "variant": "primary"
+          }
+        },
+        {
+          "name": "variant=\"secondary\"",
+          "description": "Extracted enum prop value variant=\"secondary\".",
+          "args": {
+            "variant": "secondary"
+          }
+        }
+      ],
+      "_generated": {
+        "source": "extracted",
+        "sourceFile": "src/components/Button.tsx",
+        "confidence": 50,
+        "timestamp": "2026-09-05T09:37:47.041Z"
+      },
+      "usages": [
+        {
+          "file": "src/App.tsx",
+          "line": 8,
+          "column": 6,
+          "props": [
+            {
+              "name": "onClick",
+              "kind": "dynamic"
+            }
+          ],
+          "parentElement": "main"
+        }
+      ]
+    }
+  },
+  "graph": {
+    "nodes": [
+      {
+        "name": "Button",
+        "category": "Actions",
+        "status": "stable"
+      }
+    ],
+    "edges": [],
+    "health": {
+      "orphans": [
+        "Button"
+      ],
+      "hubs": [
+        {
+          "name": "Button",
+          "degree": 0
+        }
+      ],
+      "compositionCoverage": 0,
+      "connectedComponents": [
+        [
+          "Button"
+        ]
+      ],
+      "averageDegree": 0,
+      "nodeCount": 1,
+      "edgeCount": 0
+    }
+  }
+}

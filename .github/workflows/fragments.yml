@@ -1,0 +1,46 @@
+name: Fragments Governance
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  security-events: write
+
+jobs:
+  fragments-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: |
+          if [ -f package.json ]; then
+            npm ci
+          fi
+
+      - name: Run Fragments check
+        run: |
+          mkdir -p .fragments
+          if [ -n "$FRAGMENTS_BASE_REF" ]; then
+            npm exec --offline -- fragments check --changed "origin/$FRAGMENTS_BASE_REF" --ci --format summary --report .fragments/governance.json --sarif .fragments/governance.sarif
+          else
+            npm exec --offline -- fragments check --ci --format summary --report .fragments/governance.json --sarif .fragments/governance.sarif
+          fi
+        env:
+          FRAGMENTS_API_KEY: ${{ secrets.FRAGMENTS_API_KEY }}
+          FRAGMENTS_BASE_REF: ${{ github.base_ref }}
+
+      - uses: github/codeql-action/upload-sarif@v3
+        if: always()
+        continue-on-error: true
+        with:
+          sarif_file: ".fragments/governance.sarif"

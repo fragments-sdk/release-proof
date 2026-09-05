@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "state": "partial",
+  "request": {
+    "install": true,
+    "hook": false,
+    "metadataOnly": false
+  },
+  "completed": [
+    "config",
+    "ui-runtime",
+    "guardrails"
+  ],
+  "lastError": "Could not activate the local CLI: package-manager install failed: npm install --save-dev --save-exact @usefragments/cli@1.9.2 → npm error notarget a package version that doesn't exist. npm error A complete log of this run can be found in: /Users/conan/.npm/_logs/2026-09-05T09_37_47_206Z-debug-0.log; /Users/conan/.nvm/versions/node/v22.19.0/bin/corepack npm install --save-dev --save-exact @usefragments/cli@1.9.2 → npm error notarget In most cases you or one of your dependencies are requesting a package version that doesn't exist. npm error A complete log of this run can be found in: /Users/conan/.npm/_logs/2026-09-05T09_37_57_545Z-debug-0.log. Run /Users/conan/.nvm/versions/node/v22.19.0/bin/npm install --save-dev --save-exact @usefragments/cli@1.9.2, then re-run npx @usefragments/cli init."
+}
